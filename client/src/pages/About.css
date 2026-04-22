@@ -1,0 +1,96 @@
+.about-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 4rem;
+}
+
+.about-header {
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    border-left: 4px solid var(--primary);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    padding: 2rem;
+    text-align: center;
+    transition: transform var(--transition-normal);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+.value-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.value-card p {
+    color: var(--text-secondary);
+}
+
+.team-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.team-text {
+    padding: 3rem;
+    text-align: center;
+}
+
+.team-text h2 {
+    margin-bottom: 1rem;
+}
+
+.team-image-placeholder {
+    height: 300px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    opacity: 0.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.glow-about {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(89, 195, 195, 0.2), transparent 70%);
+    top: 10%;
+    left: -200px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}

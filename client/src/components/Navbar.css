@@ -1,0 +1,366 @@
+.navbar {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+.nav-link-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.nav-link-btn:hover {
+    color: var(--primary);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icon-btn {
+    background: none;
+    color: var(--text-primary);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: var(--primary);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: var(--text-primary);
+}
+
+/* Hide desktop login button on mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* Mobile Menu Base State */
+.mobile-menu {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        /* Show it only on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        /* Maximize visibility: solid background with blur */
+        background: var(--surface-color);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+    }
+
+    [data-theme="light"] .mobile-menu {
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+    [data-theme="dark"] .mobile-menu {
+        background: rgba(18, 18, 18, 0.98);
+    }
+
+    .mobile-menu a {
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--glass-border);
+        color: var(--text-primary);
+        /* Ensure text is visible */
+        font-weight: 500;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .mobile-menu a:hover {
+        background-color: rgba(255, 77, 109, 0.1);
+        color: var(--primary);
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        background: none;
+        border: none;
+        border-bottom: 1px solid var(--glass-border);
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .mobile-menu-btn:hover {
+        background-color: rgba(255, 77, 109, 0.1);
+        color: var(--primary);
+    }
+
+    .mobile-menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--glass-border);
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 8px;
+    }
+
+    /* ... existing styles ... */
+
+    .mobile-menu-item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* User Dropdown */
+.user-dropdown-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    /* Subtle background */
+    border: 1px solid var(--glass-border);
+    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    /* Adjusted padding for avatar */
+    border-radius: 50px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.user-btn:hover {
+    background: rgba(255, 77, 109, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
+}
+
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    /* More spacing */
+    right: 0;
+    width: 220px;
+    padding: 0.75rem;
+    background: var(--surface-color);
+    /* Solid background */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top right;
+}
+
+/* Light mode specific adjustment if needed */
+[data-theme="light"] .dropdown-menu {
+    background: var(--surface-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Connect the dropdown to the button so mouse doesn't fall through gap */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    color: var(--text-primary);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 77, 109, 0.08);
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.logout-item {
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--glass-border);
+    border-radius: 0 0 10px 10px;
+    /* Rounded bottom */
+    color: #ff4d6d;
+}
+
+.logout-item:hover {
+    background: rgba(255, 77, 109, 0.15);
+    color: #ff4d6d;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .user-btn {
+        display: none;
+    }
+
+    /* Fix for mobile layout spacing */
+    .logo {
+        font-size: 1.25rem;
+        /* Reduce logo size on mobile to prevent overlap */
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .nav-icons {
+        gap: 0.5rem;
+        /* Increase gap slightly for better separation */
+        flex-shrink: 0;
+    }
+
+    /* Ensure specific spacing for cart button on mobile if needed */
+    .icon-btn {
+        margin-right: 0.5rem;
+    }
+}

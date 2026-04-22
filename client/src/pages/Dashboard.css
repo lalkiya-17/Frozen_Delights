@@ -1,0 +1,212 @@
+/* Dashboard Layout */
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-color);
+    /* Changed from undefined var(--bg-dark) */
+    transition: background-color var(--transition-normal);
+}
+
+.dashboard-sidebar {
+    width: 260px;
+    background: var(--surface-color);
+    /* Changed from hardcoded rgba */
+    border-right: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    transition: background-color var(--transition-normal);
+}
+
+.dashboard-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    text-decoration: none;
+    padding-left: 0.5rem;
+    display: block;
+    /* Ensure it takes width */
+}
+
+/* ... nav items ... */
+
+.dashboard-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align to top */
+}
+
+.dashboard-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.dashboard-nav-item:hover,
+.dashboard-nav-item.active {
+    background: rgba(255, 77, 109, 0.1);
+    color: var(--primary);
+}
+
+.dashboard-user {
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-primary);
+}
+
+.dashboard-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 2rem;
+    max-width: 100%;
+}
+
+/* ... headers ... */
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    /* Use glass bg for consistent look */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--glass-shadow);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Tables */
+.table-container {
+    background: var(--glass-bg);
+    /* Use glass bg */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+}
+
+.dashboard-table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    background: rgba(125, 125, 125, 0.05);
+    /* Slight tint for header */
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.dashboard-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.dashboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: rgba(255, 209, 102, 0.2);
+    color: #ffd166;
+}
+
+.status-approved {
+    background: rgba(89, 195, 195, 0.2);
+    color: #06d6a0;
+}
+
+.status-rejected {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ef476f;
+}
+
+.status-success {
+    background: rgba(6, 214, 160, 0.2);
+    color: #06d6a0;
+}
+
+.action-btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-approve {
+    background: #06d6a0;
+    color: #fff;
+}
+
+.btn-reject {
+    background: #ef476f;
+    color: #fff;
+}
+
+.btn-view {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .dashboard-sidebar {
+        display: none;
+        /* Mobile handling needed later */
+    }
+
+    .dashboard-content {
+        margin-left: 0;
+    }
+}

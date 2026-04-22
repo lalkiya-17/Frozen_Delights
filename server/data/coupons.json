@@ -1,0 +1,18 @@
+[
+    {
+        "code": "WELCOME50",
+        "discountType": "percentage",
+        "discountValue": 50,
+        "minOrderValue": 500,
+        "expiryDate": "2026-12-31T00:00:00.000Z",
+        "isActive": true
+    },
+    {
+        "code": "SAVE100",
+        "discountType": "fixed",
+        "discountValue": 100,
+        "minOrderValue": 1000,
+        "expiryDate": "2026-12-31T00:00:00.000Z",
+        "isActive": true
+    }
+]
