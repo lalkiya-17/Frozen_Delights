@@ -13,7 +13,7 @@ const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 
-dotenv.config();
+
 
 connectDB();
 
@@ -45,7 +45,7 @@ app.use('/api/coupons', require('./routes/couponRoutes'));
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.status(200).send("Welcome Vishal!");
+    res.status(200).send("API is running!");
 })
 
 app.listen(PORT, () => {
